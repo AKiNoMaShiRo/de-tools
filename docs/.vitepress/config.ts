@@ -22,7 +22,14 @@ export default defineConfig({
       {
         text: 'Directive',
         items: [
-          { text: 'Drag Directive', link: '/v-drag' },
+          { text: 'Drag Directive', link: '/directive/v-drag' },
+        ],
+      },
+      {
+        text: 'Function',
+        items: [
+          { text: 'Debounce Function', link: '/func/debounce' },
+          { text: 'throttle Function', link: '/func/throttle' },
         ],
       },
     ],
