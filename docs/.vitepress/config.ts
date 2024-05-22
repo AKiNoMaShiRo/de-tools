@@ -32,6 +32,12 @@ export default defineConfig({
           { text: 'throttle Function', link: '/func/throttle' },
         ],
       },
+      {
+        text: 'Components',
+        items: [
+          { text: 'SeamlessScroll', link: '/components/seamlessScroll' },
+        ],
+      },
     ],
 
     socialLinks: [

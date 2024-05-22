@@ -7,6 +7,16 @@ const scrollList = reactive([
   'bbb',
   'ccc',
   'ddd',
+  'eee',
+  // 'fff',
+  // 'ggg',
+  // 'hhh',
+  // 'iii',
+  // 'jjj',
+  // 'kkk',
+  // 'lll',
+  // 'mmm',
+  // 'nnn',
 ])
 </script>
 
@@ -20,7 +30,35 @@ const scrollList = reactive([
     </a>
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <SeamlessScroll class="scroll-box">
+  <SeamlessScroll
+    class="scroll-box"
+    :scroll-data="scrollList"
+    :options="{
+      direction: 'right',
+      speed: 0.05,
+    }"
+  >
+    <template #default>
+      <div style="display: flex;">
+        <div
+          v-for="item in scrollList"
+          :key="item"
+          class="scroll-item"
+        >
+          {{ item }}
+        </div>
+      </div>
+    </template>
+  </SeamlessScroll>
+  <SeamlessScroll
+    class="scroll-box-y"
+    :scroll-data="scrollList"
+    :options="{
+      direction: 'up',
+      speed: 0.3,
+      isStop: false,
+    }"
+  >
     <template #default>
       <div
         v-for="item in scrollList"
@@ -47,11 +85,15 @@ const scrollList = reactive([
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 .scroll-box {
-  height: 100px;
+  width: 300px;
 }
 .scroll-item {
+  margin-right: 6px;
   width: 100px;
   height: 30px;
   background: #bbb;
+}
+.scroll-box-y {
+  height: 100px;
 }
 </style>
