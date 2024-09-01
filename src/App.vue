@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import SeamlessScroll from './components/seamlessScroll.vue'
+import adaptClientSize from './tools/adaptClientSize'
 
 const scrollList = reactive([
   'aaa',
@@ -18,6 +19,9 @@ const scrollList = reactive([
   // 'mmm',
   // 'nnn',
 ])
+onBeforeMount(() => {
+  adaptClientSize(1920)
+})
 </script>
 
 <template>
@@ -29,8 +33,9 @@ const scrollList = reactive([
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
     </a>
   </div>
+  <div style="width: 2rem; height: 1rem; background: red;" />
   <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <SeamlessScroll
+  <!-- <SeamlessScroll
     class="scroll-box"
     :scroll-data="scrollList"
     :options="{
@@ -49,8 +54,8 @@ const scrollList = reactive([
         </div>
       </div>
     </template>
-  </SeamlessScroll>
-  <SeamlessScroll
+  </SeamlessScroll> -->
+  <!-- <SeamlessScroll
     class="scroll-box-y"
     :scroll-data="scrollList"
     :options="{
@@ -68,7 +73,7 @@ const scrollList = reactive([
         {{ item }}
       </div>
     </template>
-  </SeamlessScroll>
+  </SeamlessScroll> -->
 </template>
 
 <style scoped>

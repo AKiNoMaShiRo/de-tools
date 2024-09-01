@@ -1,6 +1,6 @@
 # v-drag拖拽指令
 
-将指令添加到需要拖拽
+将指令添加到需要拖拽的dom节点上
 
 <div class="drag-container">
   <div v-drag class="drag-box"></div>

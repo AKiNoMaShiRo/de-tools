@@ -3,7 +3,7 @@
 <div class="throttle-container">
 </div>
 
-<<< ../../src/tools/debounce.ts
+<<< ../../src/tools/throttle.ts
 
 <script lang="ts" setup>
 import throttle from '../../src/func/throttle.ts'

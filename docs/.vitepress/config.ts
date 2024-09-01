@@ -29,7 +29,8 @@ export default defineConfig({
         text: 'Function',
         items: [
           { text: 'Debounce Function', link: '/func/debounce' },
-          { text: 'throttle Function', link: '/func/throttle' },
+          { text: 'Throttle Function', link: '/func/throttle' },
+          { text: 'AdaptClientSize Function', link: '/func/adaptClientSize' },
         ],
       },
       {
