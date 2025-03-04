@@ -37,6 +37,7 @@ export default defineConfig({
         text: 'Components',
         items: [
           { text: 'SeamlessScroll', link: '/components/seamlessScroll' },
+          { text: 'SignBoard', link: '/components/signBoard' },
         ],
       },
     ],

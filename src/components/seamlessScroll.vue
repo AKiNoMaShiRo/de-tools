@@ -1,10 +1,5 @@
 <script setup lang="ts">
 /*
-  问题：
-    需要复制dom节点，如何在拷贝同时拷贝节点绑定的事件？——直接用两个同名slot可以实现
-    鼠标悬浮时可以滚轮滚动（mouseenter, mouseleave时判断）
-    如何让内容滚动？——使用transform
-
   可选配置项：
     自动滚动速度
     鼠标悬浮时滚轮滚动速度
@@ -51,7 +46,6 @@ const transformStart = {
   right: [-100, 0],
 }
 const transformDataA = reactive(transformStart[scrollOptions.value.direction])
-// const transformDataB = reactive([0, 0])
 
 // 清除animationFrame
 function clearRequestAnimation() {
@@ -66,10 +60,8 @@ function startScroll() {
   if (scrollOptions.value.direction === 'up') {
     if (transformDataA[1] > -100)
       transformDataA[1] -= scrollOptions.value.speed
-      // transformDataB[1] -= 0.5
     else
       transformDataA[1] = 0
-      // transformDataB[1] = 0
   }
   else if (scrollOptions.value.direction === 'down') {
     if (transformDataA[1] < 0)
@@ -91,7 +83,6 @@ function startScroll() {
   }
   listA.value.style.transform = `translateX(${transformDataA[0]}%) translateY(${transformDataA[1]}%)`
   listB.value.style.transform = `translateX(${transformDataA[0]}%) translateY(${transformDataA[1]}%)`
-  // listB.value.style.transform = `translateX(${transformDataB[0]}%) translateY(${transformDataB[1]}%)`
   requestAnimationId.value = requestAnimationFrame(startScroll)
 }
 // 停止滚动
@@ -116,7 +107,6 @@ onMounted(() => {
     if (scrollOptions.value.isStop) {
       deSeamlessScrollBox.value.addEventListener('wheel', (event) => {
       // 滚轮向上 deltaY负数 滚轮向下 deltaY正数
-      // console.log(event.deltaY)
         if (scrollOptions.value.direction === 'up' || scrollOptions.value.direction === 'down') {
           if (event.deltaY < 0)
             transformDataA[1] += scrollOptions.value.wheelSpeed

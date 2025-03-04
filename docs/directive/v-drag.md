@@ -2,11 +2,7 @@
 
 将指令添加到需要拖拽的dom节点上
 
-<div class="drag-container">
-  <div v-drag class="drag-box"></div>
-</div>
-
-<<< ../../src/directive/drag.ts
+<div v-drag class="drag-box"></div>
 
 <script lang="ts" setup>
 import drag from '../../src/directive/drag.ts'
@@ -17,15 +13,12 @@ const vDrag = drag
 button {
   border: 1px solid #CCCCCC;
 }
-.drag-container {
-  position: relative;
-  height: 100px;
-  margin-bottom: 16px;
-  /* border: 1px solid #CCCCCC; */
-}
 .drag-box {
+  position: fixed;
   width: 100px;
   height: 100px;
+  top: 300px;
+  left: 500px;
   background: blue;
   z-index: 9;
 }

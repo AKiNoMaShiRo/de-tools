@@ -1,14 +1,35 @@
-# debounce防抖函数
+# 防抖
 
 
+### 示例
+简单的计数器
+```html
+<button style="width: 40px; height: 28px;" @click="btnFunc">+1</button>
+<div>{{ count }}</div>
+```
 
+使用防抖函数
+```js
+let btnFunc = debounce(function () {
+  count.value ++
+}, 500)
+```
+
+效果如下
 <div class="debounce-container">
+  <button style="width: 40px; height: 28px;" @click="btnFunc">+1</button>
+  <div>{{ count }}</div>
 </div>
 
-<<< ../../src/tools/debounce.ts
-
 <script lang="ts" setup>
-import debounce from '../../src/func/debounce.ts'
+import debounce from '../../src/tools/debounce.ts'
+import { ref } from 'vue'
+
+let count = ref(0)
+
+let btnFunc = debounce(function () {
+  count.value ++
+}, 500)
 </script>
 
 <style>
